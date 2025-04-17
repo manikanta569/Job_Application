@@ -1,0 +1,32 @@
+# Ignore Maven target directory
+target/
+
+# STS specific
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# VS Code (optional if you open with VS Code sometimes)
+.vscode/
+
+# Logs
+*.log
+logs/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Java compiled files
+*.class
+
+# Temporary files
+*.tmp
+*.swp
+
+# Environment files
+.env
