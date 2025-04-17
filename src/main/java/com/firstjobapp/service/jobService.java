@@ -1,5 +1,11 @@
 package com.firstjobapp.service;
 
-public interface jobService {
+import java.util.List;
+
+import com.firstjobapp.model.JobModel;
+
+public interface JobService {
+	List<JobModel> findAll();
+	void createjob(JobModel job);
 
 }
