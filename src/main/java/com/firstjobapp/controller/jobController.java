@@ -19,6 +19,7 @@ import com.firstjobapp.service.JobService;
 @RequestMapping("/job")
 public class jobController {
 	private JobService jobService;
+//	private CompanyService companyservice;
 
 	public jobController(JobService jobService) {
 		super();
