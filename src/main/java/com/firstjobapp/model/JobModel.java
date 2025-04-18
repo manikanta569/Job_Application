@@ -24,6 +24,12 @@ public class JobModel {
 	private String maxSalary;
 	@Column(name = "joblocation")
 	private String Location;
+	
+	
+
+	public JobModel() {
+	
+	}
 
 	public JobModel(Long id, String title, String description, String minSalary, String maxSalary, String location) {
 		super();
