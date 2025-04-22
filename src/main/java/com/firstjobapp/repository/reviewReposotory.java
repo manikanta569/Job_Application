@@ -1,5 +1,5 @@
 package com.firstjobapp.repository;
 
-public interface reviewReposotory {
+public interface ReviewReposotory {
 
 }

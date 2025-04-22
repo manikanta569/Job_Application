@@ -1,5 +1,9 @@
 package com.firstjobapp.repository;
 
-public interface companyRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.firstjobapp.model.CompanyModel;
+
+public interface CompanyRepository extends JpaRepository<CompanyModel, Long> {
 
 }
