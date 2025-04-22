@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -24,6 +25,8 @@ public class JobModel {
 	private String maxSalary;
 	@Column(name = "joblocation")
 	private String Location;
+	@ManyToOne
+	private CompanyModel company;
 
 	public JobModel() {
 
@@ -37,6 +40,17 @@ public class JobModel {
 		this.minSalary = minSalary;
 		this.maxSalary = maxSalary;
 		Location = location;
+	}
+
+	
+	
+	
+	public CompanyModel getCompanyModel() {
+		return company;
+	}
+
+	public void setCompanyModel(CompanyModel company) {
+		this.company = company;
 	}
 
 	public Long getId() {
