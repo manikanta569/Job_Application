@@ -14,7 +14,7 @@ public class JobModel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	private Long Id;
+	private Long Id;									
 	@Column(name = "jobtitle")
 	private String Title;
 	@Column(name = "jobdescription")
@@ -45,11 +45,12 @@ public class JobModel {
 	
 	
 	
-	public CompanyModel getCompanyModel() {
+	
+	public CompanyModel getCompany() {
 		return company;
 	}
 
-	public void setCompanyModel(CompanyModel company) {
+	public void setCompany(CompanyModel company) {
 		this.company = company;
 	}
 

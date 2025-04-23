@@ -47,7 +47,14 @@ public class ComanpyServiceImpl implements CompanyService {
 		companyRepository.save(companymodel);
 	}
 
-	
-
+	@Override
+	public boolean deleteCompanyById(Long id) {
+	    if (companyRepository.existsById(id)) {
+	        companyRepository.deleteById(id);
+	        return true;
+	    } else {
+	        return false;
+	    }
+	}
 
 }
