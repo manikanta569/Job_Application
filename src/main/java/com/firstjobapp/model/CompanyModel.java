@@ -25,19 +25,20 @@ public class CompanyModel {
 	@JsonIgnore
 	@OneToMany(mappedBy = "company")
 	private List<JobModel> jobs;
-	//@OneToMany
-	// private List<ReviewModel> review;
+	@OneToMany
+	private List<ReviewModel> review;
 
 	public CompanyModel() {
-		
+
 	}
 
-	public CompanyModel(Long id, String name, String description, List<JobModel> jobs) {
+	public CompanyModel(Long id, String name, String description, List<JobModel> jobs, List<ReviewModel> review) {
 		super();
 		Id = id;
 		this.name = name;
 		this.description = description;
 		this.jobs = jobs;
+		this.review = review;
 	}
 
 	public Long getId() {
@@ -71,8 +72,13 @@ public class CompanyModel {
 	public void setJobs(List<JobModel> jobs) {
 		this.jobs = jobs;
 	}
-	
-	
-	
+
+	public List<ReviewModel> getReview() {
+		return review;
+	}
+
+	public void setReview(List<ReviewModel> review) {
+		this.review = review;
+	}
 
 }

@@ -59,6 +59,18 @@ public class CompanyController {
 	        return new ResponseEntity<>("Company not found or invalid ID", HttpStatus.NOT_FOUND);
 	    }
 	}
+	
+	@GetMapping("/getcompany/{Id}")
+	public ResponseEntity<CompanyModel> getCompanyById(@PathVariable Long Id){
+		CompanyModel companyModel= companyService.getCompanyById(Id);
+		if (companyModel != null) {
+			return new ResponseEntity<>(companyModel,HttpStatus.OK);
+		}
+		else {
+			return new ResponseEntity<> ( HttpStatus.NOT_FOUND);
+		}
+		
+	}
 
 
 }

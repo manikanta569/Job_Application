@@ -7,12 +7,14 @@ import org.springframework.stereotype.Service;
 
 import com.firstjobapp.model.CompanyModel;
 import com.firstjobapp.repository.CompanyRepository;
+import com.firstjobapp.repository.JobRepository;
 import com.firstjobapp.service.CompanyService;
 
 @Service
 public class ComanpyServiceImpl implements CompanyService {
 
 	CompanyRepository companyRepository;
+	JobRepository jobRepository;
 
 	public ComanpyServiceImpl(CompanyRepository companyRepository) {
 		super();
@@ -49,12 +51,38 @@ public class ComanpyServiceImpl implements CompanyService {
 
 	@Override
 	public boolean deleteCompanyById(Long id) {
-	    if (companyRepository.existsById(id)) {
-	        companyRepository.deleteById(id);
-	        return true;
-	    } else {
-	        return false;
-	    }
+		if (companyRepository.existsById(id)) {
+			companyRepository.deleteById(id);
+			return true;
+
+		} else {
+			return false;
+		}
+
 	}
+
+	@Override
+	public CompanyModel getCompanyById(Long id) {
+		return companyRepository.findById(id).orElse(null);
+
+	}
+
+//	@Override
+//	public CompanyModel getCompanyById(Long id) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+
+//	@Override
+//	public boolean getCompanyById(Long id) {
+//		
+//		if(companyRepository.existsById(id)) {
+//			companyRepository.findById(id);
+//			return true;
+//		}
+//		else {
+//			return false;
+//		}
+//	}
 
 }
