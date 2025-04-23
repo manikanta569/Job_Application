@@ -1,4 +1,4 @@
-package com.firstjobapp.serviceImpl;
+package com.firstjobapp.service.impl;
 
 import java.util.List;
 import java.util.Optional;

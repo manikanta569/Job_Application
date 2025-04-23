@@ -21,19 +21,22 @@ public class ReviewModel {
 	@Column(name = "reviewdescription", length = 150)
 	private String description;
 	@Column(name = "reating")
-	private boolean rating;
+	private double rating;
 
 	@JsonIgnore // the reason to mention @JsonIgnore is we will be having same linking in the
 				// compamyModel too
 	@ManyToOne
 	private CompanyModel companyModel;
 
-	public ReviewModel(Long id, String title, String description, boolean rating) {
+	
+
+	public ReviewModel(Long id, String title, String description, double rating, CompanyModel companyModel) {
 		super();
 		Id = id;
 		this.title = title;
 		this.description = description;
 		this.rating = rating;
+		this.companyModel = companyModel;
 	}
 
 	public ReviewModel() {
@@ -64,11 +67,12 @@ public class ReviewModel {
 		this.description = description;
 	}
 
-	public boolean isRating() {
+	
+	public double getRating() {
 		return rating;
 	}
 
-	public void setRating(boolean rating) {
+	public void setRating(double rating) {
 		this.rating = rating;
 	}
 

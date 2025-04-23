@@ -9,6 +9,6 @@ import com.firstjobapp.model.ReviewModel;
 public interface ReviewReposotory extends JpaRepository<ReviewModel, Long> 
 {
 
-	List<ReviewModel> findByCompanyId(Long companyId);
+	List<ReviewModel> findByCompanyModelId(Long companyId);
 
 }
