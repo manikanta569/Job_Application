@@ -7,6 +7,11 @@ import com.firstjobapp.model.ReviewModel;
 public interface ReviewService {
 	List<ReviewModel> getAllReviews(Long companyId);
 
-	void addreview(Long companyId, ReviewModel reviewModel);
+	boolean addreview(Long companyId, ReviewModel reviewModel);
+
+	ReviewModel getreview(Long companyId, Long reviewId);
+	boolean updateReview(Long companyId, Long reviewId, ReviewModel reviewModel) ;
+
+	boolean deleteReview(Long companytId, Long reviewId);
 
 }

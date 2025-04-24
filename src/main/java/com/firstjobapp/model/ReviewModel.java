@@ -1,6 +1,6 @@
 package com.firstjobapp.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -23,10 +23,17 @@ public class ReviewModel {
 	@Column(name = "reating")
 	private double rating;
 
-	@JsonIgnore // the reason to mention @JsonIgnore is we will be having same linking in the
-				// compamyModel too
+//	@JsonIgnore // the reason to mention @JsonIgnore is we will be having same linking in the
+//				// compamyModel too
+//	@ManyToOne
+//	private CompanyModel companyModel;
+//	
+	// import com.fasterxml.jackson.annotation.JsonBackReference;
+
+	@JsonBackReference
 	@ManyToOne
 	private CompanyModel companyModel;
+
 
 	
 
